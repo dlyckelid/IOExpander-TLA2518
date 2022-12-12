@@ -52,4 +52,5 @@ if(ioexpander.begin())
   int valAnalog4 = analogRead(2);
 }
 
+ioexpander.end();
 ```
