@@ -51,8 +51,8 @@ if(ioexpander.begin())
   
   #Read analog inputs
   int valAnalog2 = analogRead(2);
-  int valAnalog3 = analogRead(2);
-  int valAnalog4 = analogRead(2);
+  int valAnalog3 = analogRead(3);
+  int valAnalog4 = analogRead(4);
 }
 
 ioexpander.end();
