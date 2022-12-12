@@ -19,7 +19,6 @@ public:
 	int begin();
 	void end();
 	void readStatus();
-	int readAnalogInput(uint8_t input, uint8_t* data);
 	void digitalWrite(uint8_t pin, uint8_t val);
 	uint8_t digitalRead(uint8_t pin);
 	int analogRead(uint8_t pin);
@@ -31,6 +30,7 @@ private:
 	int writeRegister(uint8_t address, uint8_t value);
 	int setBit(uint8_t address, uint8_t bit);
 	int resetBit(uint8_t address, uint8_t bit);
+	int readAnalogInput(uint8_t input, uint8_t* data);
 private:
 	SPIClass* _spi;
 	int _csPin;
