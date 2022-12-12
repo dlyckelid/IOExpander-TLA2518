@@ -39,16 +39,6 @@ int TLA2518Class::begin()
     _spi->begin();
     if (readRegister(SYSTEM_STATUS_ADDRESS))
     {
-        ////writeRegister(GENERAL_CFG_ADDRESS,0b00000001);
-        //writeRegister(PIN_CFG_ADDRESS, 0b11100011);
-        //writeRegister(GPIO_CFG_ADDRESS, 0b11100011);
-        //writeRegister(GPO_DRIVE_CFG_ADDRESS, 0b11100011);
-        //writeRegister(GPO_VALUE_ADDRESS, 0b00000000);
-
-        ////setBit(DATA_CFG_ADDRESS,0b00010000);
-
-        readStatus();
-
         return 1;
     }
     return 0;
