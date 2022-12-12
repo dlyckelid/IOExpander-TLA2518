@@ -24,6 +24,9 @@ Returns analog value from Analog enabled input
 ###  pinMode(uint8_t pin, uint8_t mode);
 Sets pin mode on pin (0-7)
 ```
+#include "TLA2518.h"
+
+
 TLA2518Class ioexpander = TLA2518Class(vspi,5);
 if(ioexpander.begin())
 {
