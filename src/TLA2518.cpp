@@ -113,7 +113,7 @@ int TLA2518Class::readAnalogInput(uint8_t input, uint8_t* data)
     return 1;
 }
 
-void TLA2518Class::digitalWrite(uint8_t pin, uint8_t val)
+void TLA2518Class::digitalWriteIO(uint8_t pin, uint8_t val)
 {
     if (pin >= 0 && pin <= 7)
     {
@@ -128,7 +128,7 @@ void TLA2518Class::digitalWrite(uint8_t pin, uint8_t val)
     }
 }
 
-uint8_t TLA2518Class::digitalRead(uint8_t pin)
+uint8_t TLA2518Class::digitalReadIO(uint8_t pin)
 {
     if (pin >= 0 && pin < 8)
     {
@@ -139,14 +139,14 @@ uint8_t TLA2518Class::digitalRead(uint8_t pin)
     return uint8_t();
 }
 
-int TLA2518Class::analogRead(uint8_t pin)
+int TLA2518Class::analogReadIO(uint8_t pin)
 {
     uint8_t value[3];
     readAnalogInput(pin, (uint8_t*)value);
     return (value[0] << 4) | (value[1] >> 4);
 }
 
-void TLA2518Class::pinMode(uint8_t pin, uint8_t mode)
+void TLA2518Class::pinModeIO(uint8_t pin, uint8_t mode)
 {
     if (pin < 8)
     {
