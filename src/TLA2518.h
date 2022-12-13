@@ -31,10 +31,10 @@ public:
 	int begin();
 	void end();
 	void readStatus();
-	void digitalWrite(uint8_t pin, uint8_t val);
-	uint8_t digitalRead(uint8_t pin);
-	int analogRead(uint8_t pin);
-	void pinMode(uint8_t pin, uint8_t mode);
+	void digitalWriteIO(uint8_t pin, uint8_t val);
+	uint8_t digitalReadIO(uint8_t pin);
+	int analogReadIO(uint8_t pin);
+	void pinModeIO(uint8_t pin, uint8_t mode);
 
 private:
 	int readRegister(uint8_t address);
