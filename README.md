@@ -31,28 +31,28 @@ TLA2518Class ioexpander = TLA2518Class(vspi,5);
 if(ioexpander.begin())
 {
   #Assign pins
-  ioexpander.pinMode(0,OUTPUT);
-  ioexpander.pinMode(1,INPUT);
-  ioexpander.pinMode(2,ANALOG);
-  ioexpander.pinMode(3,ANALOG);
-  ioexpander.pinMode(4,ANALOG);
-  ioexpander.pinMode(5,INPUT);
-  ioexpander.pinMode(6,OUTPUT);
-  ioexpander.pinMode(7,OUTPUT);
+  ioexpander.pinModeIO(0,OUTPUT);
+  ioexpander.pinModeIO(1,INPUT);
+  ioexpander.pinModeIO(2,ANALOG);
+  ioexpander.pinModeIO(3,ANALOG);
+  ioexpander.pinModeIO(4,ANALOG);
+  ioexpander.pinModeIO(5,INPUT);
+  ioexpander.pinModeIO(6,OUTPUT);
+  ioexpander.pinModeIO(7,OUTPUT);
   
   #Set outputs
-  ioexpander.digitalWrite(0,LOW);
-  ioexpander.digitalWrite(6,HIGH);
-  ioexpander.digitalWrite(7,LOW);
+  ioexpander.digitalWriteIO(0,LOW);
+  ioexpander.digitalWriteIO(6,HIGH);
+  ioexpander.digitalWriteIO(7,LOW);
   
   #Read inputs
-  uint8_t valPin1 = digitalRead(1);
-  uint8_t valPin5 = digitalRead(5);
+  uint8_t valPin1 = ioexpander.digitalReadIO(1);
+  uint8_t valPin5 = ioexpander.digitalReadIO(5);
   
   #Read analog inputs
-  int valAnalog2 = analogRead(2);
-  int valAnalog3 = analogRead(3);
-  int valAnalog4 = analogRead(4);
+  int valAnalog2 = ioexpander.analogReadIO(2);
+  int valAnalog3 = ioexpander.analogReadIO(3);
+  int valAnalog4 = ioexpander.analogReadIO(4);
 }
 
 ioexpander.end();
