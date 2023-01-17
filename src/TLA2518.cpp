@@ -159,6 +159,11 @@ int TLA2518Class::analogReadIO(uint8_t pin)
     return (value[0] << 4) | (value[1] >> 4);
 }
 
+void TLA2518Class::reset()
+{
+    setBit(GENERAL_CFG_ADDRESS,1 << RST_MASK);
+}
+
 void TLA2518Class::pinModeIO(uint8_t pin, uint8_t mode)
 {
     if (pin < 8)
