@@ -35,8 +35,7 @@ public:
 	uint8_t digitalReadIO(uint8_t pin);
 	int analogReadIO(uint8_t pin);
 	void pinModeIO(uint8_t pin, uint8_t mode);
-
-private:
+	void reset();
 	int readRegister(uint8_t address);
 	int readRegisters(uint8_t address, uint8_t* data, size_t length);
 	int writeRegister(uint8_t address, uint8_t value);
